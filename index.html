@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tare.sh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+        body {
+            background-color: black;
+            color: rgb(0, 0, 0);
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 80px;
+            text-shadow: 8px 8px 15px red;
+        }
+
+        .roster {
+            list-style: none;
+            padding: 0;
+        }
+
+        .roster li {
+            font-size: 50px;
+            margin: 20px 0;
+            text-shadow: 3px 3px 7px white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .roster li:hover {
+            transform: scale(1.2);
+            color: red;
+            text-shadow: 5px 5px 15px crimson;
+        }
+    </style>
+</head>
+<body onclick="playSound()">
+    <h1>tare.sh</h1>
+    <ul class="roster">
+        <li>kl</li>
+        <li>pleased</li>
+        <li>rott</li>
+        <li>sk</li>
+    </ul>
+
+    <audio id="creepyAudio" src="audio.mp3"></audio>
+
+    <script>
+        let played = false;
+
+        function playSound() {
+            if (!played) {
+                document.getElementById('creepyAudio').play();
+                played = true;
+            }
+        }
+    </script>
+</body>
+</html>
