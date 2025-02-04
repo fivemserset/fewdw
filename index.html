@@ -5,58 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tare.sh</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://fonts.cdnfonts.com/s/25004/MinecraftTen.woff') format('woff');
+        }
         body {
             background-color: black;
-            color: rgb(0, 0, 0);
-            font-family: 'Creepster', cursive;
+            color: rgb(100, 100, 100);
+            font-family: 'Minecraft', sans-serif;
             text-align: center;
+            cursor: url('http://www.rw-designer.com/cursor-extern.php?id=86820'), auto;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
         }
-
-        h1 {
-            font-size: 80px;
-            text-shadow: 8px 8px 15px red;
+        .header img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
         }
-
-        .roster {
-            list-style: none;
-            padding: 0;
-        }
-
-        .roster li {
+        .header h1 {
             font-size: 50px;
-            margin: 20px 0;
-            text-shadow: 3px 3px 7px white;
-            transition: transform 0.3s ease-in-out;
+            text-shadow: 4px 4px black;
         }
-
-        .roster li:hover {
-            transform: scale(1.2);
-            color: red;
-            text-shadow: 5px 5px 15px crimson;
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .member-box {
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            border: 3px solid black;
+            width: 250px;
+            text-align: center;
+            box-shadow: 5px 5px 15px black;
+        }
+        .member-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid black;
         }
     </style>
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
 </head>
-<body onclick="playSound()">
-    <h1>tare.sh</h1>
-    <ul class="roster">
-        <li>kl</li>
-        <li>pleased</li>
-        <li>rott</li>
-        <li>sk</li>
-    </ul>
-
-    <audio id="creepyAudio" src="audio.mp3"></audio>
-
+<body onclick="playAudio()">
+    <audio id="clickSound" src="audio.mp3"></audio>
+    <div class="header">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/039/569/157/small_2x/ai-generated-devil-demon-wings-on-transparent-background-generative-ai-png.png" alt="Creepy Logo">
+        <h1>tare.sh</h1>
+    </div>
+    <div class="members">
+        <div class="member-box">
+            <img src="https://images-ext-1.discordapp.net/external/E6njs5g089hWwHMpYFFjjgJKESohzf29sqv9eI5E0to/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1329517565135028277/a_5c2a1a070b65794438287f5468d8680c.gif?width=300&height=300" alt="Profile Picture">
+            <h2>kl</h2>
+            <p>pure coke head.</p>
+        </div>
+        <div class="member-box">
+            <img src="https://media.discordapp.net/attachments/1336339424602230794/1336378991871004752/IMG_3787.png?ex=67a3976c&is=67a245ec&hm=3930ec721afa862e7e2a81a0c9f57ccd4fe08252e7a324dbb0e007bfbc406c1a&=&format=webp&quality=lossless" alt="Profile Picture">
+            <h2>pleased</h2>
+            <p>tears of ketamine.</p>
+        </div>
+        <div class="member-box">
+            <img src="https://media.discordapp.net/attachments/1336339424602230794/1336379104974344192/rottxriotRHM.png?ex=67a39787&is=67a24607&hm=fa42bffb85fcff411dad3e90021c424ed6466965b251975afa32386ab643fffb&=&format=webp&quality=lossless&width=353&height=350" alt="Profile Picture">
+            <h2>rott</h2>
+            <p>t.me/rottaway</p>
+        </div>
+        <div class="member-box">
+            <img src="https://media.discordapp.net/attachments/1336339424602230794/1336380670112694417/photo_2025-01-23_04-43-07.jpg?ex=67a398fc&is=67a2477c&hm=1354debbbc149f91ca761f5c65759546a15d25c1ad68470a072fbf0f1898aac7&=&format=webp" alt="Profile Picture">
+            <h2>sk</h2>
+            <p>t.me/fedrunner</p>
+        </div>
+    </div>
     <script>
-        let played = false;
-
-        function playSound() {
-            if (!played) {
-                document.getElementById('creepyAudio').play();
-                played = true;
+        function playAudio() {
+            var audio = document.getElementById("clickSound");
+            if (!audio.played.length) {
+                audio.play();
             }
         }
     </script>
